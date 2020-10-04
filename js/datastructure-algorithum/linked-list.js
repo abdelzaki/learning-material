@@ -1,4 +1,4 @@
-/ linked list
+// linked list shift
 class linkedList{
 
     constructor(){
@@ -19,6 +19,15 @@ class linkedList{
         if(!this.head){
             this.head = element;
         }
+    }
+
+    prepend(value){
+        if(!this.head){
+            this.append(value)
+            return;
+        } 
+        const element = {value : value, next : this.head}
+        this.head = element 
     }
 
     remove(){
@@ -44,13 +53,15 @@ class linkedList{
             allElements.push(currentElement);
             currentElement = currentElement.next;
         }
-        return currentElement;
+      
+        return allElements;
     }
 }
 
 list1 = new linkedList();
+list1.prepend("first")
 list1.append(1);
 list1.append(2);
 list1.toArray();
-list1.remove();
+list1.prepend("second")
 list1.toArray();
