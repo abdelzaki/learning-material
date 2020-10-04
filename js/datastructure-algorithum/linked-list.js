@@ -9,12 +9,10 @@ class linkedList{
     append(value){
         const element = {
             value : value, next : null
-        }
-        
+        }       
         if (this.tail){
             this.tail.next = element;
         }
-
         this.tail = element;
         if(!this.head){
             this.head = element;
@@ -66,6 +64,29 @@ class linkedList{
         }
     }
 
+    getElementAndminusoneElement(index){
+        let currentElement = this.head;
+        let currentElementMinus1 = null;
+        let currentIndex = 0;
+        while(currentElement){
+            if (currentIndex === index){
+                return {currentElementMinus1,currentElement};
+            }else if( currentIndex > index) return;
+            currentElementMinus1 = currentElement;
+            currentElement = currentElement.next;
+            currentIndex++;
+        }
+    }
+
+    insert(index,value){
+        let elementAndElementMiunsOne = this.getElementAndminusoneElement(index)
+        if (elementAndElementMiunsOne){
+           
+            elementAndElementMiunsOne.currentElementMinus1.next = {value:value,next:elementAndElementMiunsOne.currentElement};
+          
+        }
+    }
+
     toArray(){
         const allElements = [];
         let currentElement = this.head;
@@ -81,8 +102,9 @@ list1 = new linkedList();
 list1.prepend("first")
 list1.append(1);
 list1.append(2);
+
 list1.toArray();
-list1.get(2)
+list1.insert(1,123)
 list1.toArray();
 //branch2
 //branch4
