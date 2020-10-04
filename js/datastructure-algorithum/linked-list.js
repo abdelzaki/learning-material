@@ -64,7 +64,6 @@ class linkedList{
         if(element){
             element.value = value; 
         }
-
     }
 
     toArray(){
@@ -74,7 +73,6 @@ class linkedList{
             allElements.push(currentElement);
             currentElement = currentElement.next;
         }
-      
         return allElements;
     }
 }
