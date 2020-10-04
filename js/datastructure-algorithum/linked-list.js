@@ -44,7 +44,7 @@ class linkedList{
             allElements.push(currentElement);
             currentElement = currentElement.next;
         }
-        console.log(allElements);
+        return currentElement;
     }
 }
 
