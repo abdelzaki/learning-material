@@ -45,6 +45,7 @@ class linkedList{
             currentElement = currentElement.next;
         }
         console.log(allElements);
+		console.log("hi")
     }
 }
 
