@@ -84,12 +84,12 @@ list1.append(2);
 list1.toArray();
 list1.get(2)
 list1.toArray();
-<<<<<<< HEAD
 
 //master1
 //master3
 
-=======
+//master1123
+
 //branch2
 //branch4
->>>>>>> insert/remove
+
