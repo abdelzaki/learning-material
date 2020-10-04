@@ -46,6 +46,18 @@ class linkedList{
        } 
     }
 
+    get(index){
+        let currentElement = this.head;
+        let currentIndex = 0;
+        while(currentElement){
+            if (currentIndex === index){
+                return currentElement;
+            }else if( currentIndex > index) return;
+            currentElement = currentElement.next;
+            currentIndex++;
+        }
+    }
+
     toArray(){
         const allElements = [];
         let currentElement = this.head;
@@ -63,5 +75,5 @@ list1.prepend("first")
 list1.append(1);
 list1.append(2);
 list1.toArray();
-list1.prepend("second")
+list1.get(2)
 list1.toArray();
