@@ -45,6 +45,7 @@ class linkedList{
         this.tail = null;
        } 
     }
+    
 
     get(index){
         let currentElement = this.head;
@@ -56,6 +57,14 @@ class linkedList{
             currentElement = currentElement.next;
             currentIndex++;
         }
+    }
+
+    set(index,value){
+        let element = this.get(index)
+        if(element){
+            element.value = value; 
+        }
+
     }
 
     toArray(){
