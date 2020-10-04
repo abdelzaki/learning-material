@@ -1,4 +1,4 @@
-/ linked list
+/ linked list with delete 
 class linkedList{
 
     constructor(){
