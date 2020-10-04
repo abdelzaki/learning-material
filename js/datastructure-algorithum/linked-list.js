@@ -1,4 +1,4 @@
-/ linked list
+/ linked list shift
 class linkedList{
 
     constructor(){
