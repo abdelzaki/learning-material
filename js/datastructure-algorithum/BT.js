@@ -34,8 +34,28 @@ class BT{
         }
     }
 
+    traverse(){
+        if(!this.root) return this;
+        const qeueu = [];
+        const visited = [];
+        qeueu.push(this.root);
+        while (qeueu.length > 0){
+            const currentElement = qeueu.shift();
+            if(currentElement.left){
+                qeueu.push(currentElement.left)
+            }
+            if(currentElement.right){
+                qeueu.push(currentElement.right)
+            }
+            visited.push(currentElement.value);
+
+        }
+        return visited;
+    }
+
 
 }
+
 
 bt = new BT();
 bt.insert(10);
@@ -46,3 +66,4 @@ bt.insert(15);
 bt.insert(8);
 bt.insert(3);
 bt.insert(1);
+bt.traverse();
