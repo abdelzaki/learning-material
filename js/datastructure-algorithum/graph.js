@@ -37,7 +37,7 @@ class Graph{
             console.log(element)
             if(!visited.includes(element)){
                 visited.push(element);
-                this.elements.forEach(ele=>{
+                this.elements[element].forEach(ele=>{
                     traverseGraphRecur(ele)
                 })
             }
@@ -75,4 +75,4 @@ graph2.addRelation("C","E");
 graph2.addRelation("D","E");
 graph2.addRelation("E","F");
 graph2.addRelation("F","F");
-graph2.traverGraphRecursive("A")
+graph2.traverGraphRecursive("E")
