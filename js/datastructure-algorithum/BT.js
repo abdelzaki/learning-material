@@ -34,13 +34,14 @@ class BT{
         }
     }
 
-    traverse(){
+    breitTraverse(){
         if(!this.root) return this;
         const qeueu = [];
         const visited = [];
+        let currentElement = null ;
         qeueu.push(this.root);
         while (qeueu.length > 0){
-            const currentElement = qeueu.shift();
+            currentElement = qeueu.shift();
             if(currentElement.left){
                 qeueu.push(currentElement.left)
             }
@@ -51,6 +52,23 @@ class BT{
 
         }
         return visited;
+    }
+
+
+    depthTraverse(){
+        const allElements = [];
+        let node = this.root;
+        function depthRecursive(node){
+            console.log(node)
+            node.left && depthRecursive(node.left);
+            node.right && depthRecursive(node.right);
+            allElements.push(node.value);
+        }
+        depthRecursive(node);
+    
+      
+        return allElements;
+
     }
 
 
@@ -66,4 +84,5 @@ bt.insert(15);
 bt.insert(8);
 bt.insert(3);
 bt.insert(1);
-bt.traverse();
+bt.breitTraverse();
+bt.depthTraverse()
