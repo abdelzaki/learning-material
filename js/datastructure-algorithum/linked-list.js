@@ -1,4 +1,4 @@
-// linked list shift
+
 class linkedList{
 
     constructor(){
@@ -66,6 +66,20 @@ class linkedList{
         }
     }
 
+    reverse(){
+        let currentElement = this.head;
+        this.tail = this.head;
+        this.head = null;
+      
+        while(currentElement){
+            let temp = currentElement.next;
+            currentElement.next = this.head; 
+            this.head = currentElement; 
+            currentElement = temp;
+        }
+
+    }
+
     toArray(){
         const allElements = [];
         let currentElement = this.head;
@@ -78,18 +92,13 @@ class linkedList{
 }
 
 list1 = new linkedList();
-list1.prepend("first")
+
 list1.append(1);
 list1.append(2);
+list1.append(23);
+list1.append(4);
 list1.toArray();
-list1.get(2)
+list1.reverse()
 list1.toArray();
 
-//master1
-//master3
-
-//master1123
-
-//branch2
-//branch4
 
