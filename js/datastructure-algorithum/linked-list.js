@@ -1,4 +1,4 @@
-// linked list shift
+
 class linkedList{
 
     constructor(){
@@ -9,12 +9,10 @@ class linkedList{
     append(value){
         const element = {
             value : value, next : null
-        }
-        
+        }       
         if (this.tail){
             this.tail.next = element;
         }
-
         this.tail = element;
         if(!this.head){
             this.head = element;
@@ -66,6 +64,43 @@ class linkedList{
         }
     }
 
+
+    reverse(){
+        let currentElement = this.head;
+        this.tail = this.head;
+        this.head = null;
+      
+        while(currentElement){
+            let temp = currentElement.next;
+            currentElement.next = this.head; 
+            this.head = currentElement; 
+            currentElement = temp;
+        }
+    }
+    getElementAndminusoneElement(index){
+        let currentElement = this.head;
+        let currentElementMinus1 = null;
+        let currentIndex = 0;
+        while(currentElement){
+            if (currentIndex === index){
+                return {currentElementMinus1,currentElement};
+            }else if( currentIndex > index) return;
+            currentElementMinus1 = currentElement;
+            currentElement = currentElement.next;
+            currentIndex++;
+        }
+    }
+
+    insert(index,value){
+        let elementAndElementMiunsOne = this.getElementAndminusoneElement(index)
+        if (elementAndElementMiunsOne){
+           
+            elementAndElementMiunsOne.currentElementMinus1.next = {value:value,next:elementAndElementMiunsOne.currentElement};
+          
+        }
+
+    }
+
     toArray(){
         const allElements = [];
         let currentElement = this.head;
@@ -78,18 +113,15 @@ class linkedList{
 }
 
 list1 = new linkedList();
-list1.prepend("first")
+
 list1.append(1);
 list1.append(2);
+list1.append(23);
+list1.append(4);
 list1.toArray();
-list1.get(2)
+list1.reverse()
+list1.toArray();
+list1.insert(1,123)
 list1.toArray();
 
-//master1
-//master3
-
-//master1123
-
-//branch2
-//branch4
 
