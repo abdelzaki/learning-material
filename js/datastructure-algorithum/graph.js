@@ -68,6 +68,7 @@ graph2.addElement("C");
 graph2.addElement("D");
 graph2.addElement("E");
 graph2.addElement("F");
+graph2.addElement("FF");
 graph2.addRelation("A","C");
 graph2.addRelation("A","B");
 graph2.addRelation("B","D");
